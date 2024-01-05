@@ -14,6 +14,7 @@ const MovingDiv = forwardRef(
       y3 = 0,
       x4 = 0,
       y4 = 0,
+      text = "text",
       isBrust = false,
       duration = 2,
       initx = 0,
@@ -81,7 +82,12 @@ const MovingDiv = forwardRef(
         className={`${styles.moving_div} ${styles.square_div} ${isBursting ? styles.burst_animation : ''
           }`}
       >
-        <img src={imgSrc} alt={alt} />
+        <div className=' relative flex items-center justify-center'>
+          <p className='text-white absolute text-2xl'>
+            {text}
+          </p>
+          <img className='' src={imgSrc} alt={alt} />
+        </div>
       </div>
     );
   }
@@ -91,8 +97,8 @@ export default MovingDiv;
 
 export const Posarr = [
   {
-    alt:"NINAF",
-    imgSrc: "/virus/ninaf.png",
+    alt: "Fatigue",
+    imgSrc: "/virus/1.png",
     initX: 50,
     inity: 50,
     duration: 3,
@@ -108,8 +114,8 @@ export const Posarr = [
     score: 600,
   },
   {
-    alt:"LULIFIN",
-    imgSrc: "/virus/lulifin.png",
+    alt: "weakness",
+    imgSrc: "/virus/2.png",
     initX: 20,
     inity: 50,
     duration: 2,
@@ -125,8 +131,8 @@ export const Posarr = [
     score: 400,
   },
   {
-    alt:"NAFBOR",
-    imgSrc: "/virus/nafbor.png",
+    alt: "Dizzines",
+    imgSrc: "/virus/3.png",
     initX: 90,
     inity: 80,
     duration: 2,
@@ -142,8 +148,8 @@ export const Posarr = [
     score: 300,
   },
   {
-    alt:"NAFTICROSS",
-    imgSrc: "/virus/nafticross.png",
+    alt: "palpitation",
+    imgSrc: "/virus/4.png",
     duration: 3,
     x1: 20,
     y1: 10,
@@ -157,8 +163,8 @@ export const Posarr = [
     score: 300,
   },
   {
-    alt:"LULICAN",
-    imgSrc: "/virus/lulican.png",
+    alt: "headache",
+    imgSrc: "/virus/5.png",
     duration: 3,
     x1: 50,
     y1: 10,

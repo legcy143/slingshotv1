@@ -56,8 +56,8 @@
 }
 
 .square_div {
-    width: 13rem;
-    /* aspect-ratio: 1/1; */
+    width: 10rem;
+    aspect-ratio: 1/1;
     height: fit-content;
     /* background-color: green; */
     position: absolute;

@@ -30,7 +30,7 @@ const StartForm = () => {
   const router = useRouter();
   const [player, setplayer] = useState("")
   const [mode, setmode] = useState('slow')
-  const [time, setTime] = useState("")
+  const [time, setTime] = useState("60")
   let playerList = [
     // { _id: 1, value: "prince" },
     // { _id: 2, value: "sid" },
@@ -47,26 +47,26 @@ const StartForm = () => {
           setmode(e.target.value)
         }}
       >
-        <option value="None" className='hidden'>Choose speed</option>
+        {/* <option value="None" className='hidden'>Choose speed</option> */}
         {playerList?.map(e => <option
           className='capitalize'
           key={e}
           value={e}>
-          {e}{e=="slow" && " (default)"}
+          {e}{e == "slow" && " (default)"}
         </option>
         )}
       </select>
       {/* <input placeholder="Player Name" className="bg-gray-100 text-gray-800 border-0 rounded-md p-5 w-full focus:bg-gray-200 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150" type="text" onChange={(e) => {
         setplayer(e.target.value)
       }} /> */}
-      <input placeholder="Time in second (s)" className="bg-gray-100 text-gray-800 border-0 rounded-md p-5 w-full focus:bg-gray-200 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150" type="number" onChange={(e) => {
+      <input placeholder="Time in second (s)" className="bg-gray-100 text-gray-800 border-0 rounded-md p-5 w-full focus:bg-gray-200 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150" type="number" value={time} onChange={(e) => {
         setTime(e.target.value)
       }} />
-      <p className='text-red-500 w-[100%] p-2 capitalize bg-white rounded bg-opacity-90'>* All fields are required <br /> * time is must be in number <br />* time is in second</p>
+      <p className='text-red-500 w-[100%] p-2 capitalize bg-white rounded bg-opacity-90'><br /> * time is must be in number <br />* time is in second</p>
 
       <button className="start-btn" onClick={() => {
         try {
-          if (player.length > 0 && time.length > 0) {
+          if (time.length > 0) {
             router.push(`/gameboard?mode=${mode}&time=${+time}`)
           }
         } catch (error) {

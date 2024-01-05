@@ -44,7 +44,7 @@ export default function GameScreen() {
         setspeed(0.5)
         break;
       case 'fast':
-        setspeed(1)
+        setspeed(1.5)
         break;
 
       default:
@@ -167,6 +167,7 @@ export default function GameScreen() {
       <BgImage />
       <nav className={styles.nav}>
         <img src="/logo.png" alt="logo" />
+        <h2 className="bg-red-600 p-2 px-5 rounded-md text-white text-center left-1/2 top-[2.5rem] font-bold text-3xl uppercase fixed transform -translate-x-1/2 -translate-y-1/2">symptoms of anemia</h2>
         <div>
           {/* <p>
             <Timer initialTime={+time} onTimerEnd={handleOnTimerEnd} />
@@ -175,7 +176,7 @@ export default function GameScreen() {
           <CountdownCircleTimer
             isPlaying
             strokeWidth={8}
-            duration={+time-speed}
+            duration={+time}
             size={55}
             colors={['#004777', '#F7B801', '#A30000', '#A30000']}
             colorsTime={[7, 5, 2, 0]}
@@ -193,9 +194,10 @@ export default function GameScreen() {
           return (
             <MovingDiv
               key={i}
-              duration={e.duration}
+              duration={e.duration - speed}
               imgSrc={e?.imgSrc}
               alt={e?.alt}
+              text={e?.alt}
               ref={refsArray[i]}
               initx={e?.initX ?? 0}
               inity={e?.inity ?? 0}

@@ -67,7 +67,7 @@
     transform: scale(1.7);
 }
 
-.btns{
+.btns {
     height: 60px;
     display: flex;
     align-items: center;
@@ -102,4 +102,64 @@
     letter-spacing: 0px;
     transform: translateY(8px);
     box-shadow: 0 0 0 #654dff63;
+}
+
+
+/* second style */
+.Tcontainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    /* background-color: red; */
+}
+
+.Tcontainer img {
+    width: 40%;
+    max-width: 20rem;
+    height: 100%;
+    max-height: 20rem;
+    object-fit: contain;
+    position: relative;
+}
+
+.img1 {
+    animation: leftcenter 2s ease;
+}
+
+.img2 {
+    animation: topcenter 2s ease;
+}
+.textT{
+    font-size: 2rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-align: center;
+    position: relative;
+    animation: topcenter 2s ease;
+}
+
+@keyframes leftcenter {
+    from {
+        opacity: 0;
+        left: -200%;
+    }
+
+    to {
+        left: 0%;
+        opacity: 1;
+    }
+}
+
+@keyframes topcenter {
+    from {
+        opacity: 0;
+        top: -200%;
+    }
+
+    to {
+        top: 0%;
+        opacity: 1;
+    }
 }
