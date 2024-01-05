@@ -23,16 +23,32 @@ export default function GameScreen() {
   const router = useRouter();
   const [width, setwidth] = useState(0);
   const [score, setscore] = useState(0);
+  const [speed, setspeed] = useState(0)
   const [poppedElements, setpoppedElements] = useState<any>([]);
   const sectionRef = useRef<any>(null);
   const searchParams = useSearchParams();
-  const player = searchParams.get("player");
+  // const player = searchParams.get("player");
+  const mode = searchParams.get("mode");
   const time = searchParams.get("time") || 0;
 
   useEffect(() => {
-    if (sectionRef.current) {
-      const divWidth = sectionRef?.current?.offsetWidth;
-      console.log("Width of the div:", divWidth);
+    // if (sectionRef.current) {
+    //   const divWidth = sectionRef?.current?.offsetWidth;
+    //   console.log("Width of the div:", divWidth);
+    // }
+    switch (mode) {
+      case 'slow':
+        setspeed(0)
+        break;
+      case 'medium':
+        setspeed(0.5)
+        break;
+      case 'fast':
+        setspeed(1)
+        break;
+
+      default:
+        break;
     }
   }, []);
   useEffect(() => {
@@ -44,7 +60,7 @@ export default function GameScreen() {
 
   // function for timer end :: route to score card
   const handleOnTimerEnd = () => {
-    router.push(`/scorecard?score=${score}&time=${time}&player=${player}`);
+    router.push(`/scorecard?score=${score}&time=${time}&mode=${mode}`);
   };
   // shoot icon refrence
   let shootIcon = useRef<any>();
@@ -159,7 +175,7 @@ export default function GameScreen() {
           <CountdownCircleTimer
             isPlaying
             strokeWidth={8}
-            duration={+time}
+            duration={+time-speed}
             size={55}
             colors={['#004777', '#F7B801', '#A30000', '#A30000']}
             colorsTime={[7, 5, 2, 0]}

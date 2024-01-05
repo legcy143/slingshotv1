@@ -9,7 +9,7 @@ import { useParams, useRouter, useSearchParams } from 'next/navigation'
 export default function ScoreCard() {
     const router = useRouter()
     const searchParams = useSearchParams()
-    const player = searchParams.get('player')
+    const mode = searchParams.get('mode')
     const score = searchParams.get('score')
     const time = searchParams.get('time')
     return (
@@ -42,11 +42,11 @@ export default function ScoreCard() {
                         <StarIcon />
                         <StarIcon />
                     </div> */}
-                    <p className={styles.header}>{player}</p>
+                    {/* <p className={styles.header}>{player}</p> */}
                     {/* <p className='truncate w-full text-center'>{player}</p> */}
                     <p className='flex items-center font-bold text-4xl p-4'>
                         <TimerIcon />
-                        {time ?? 0}s
+                        {time ?? 0}s ({mode})
                     </p>
                     <div className={styles.scorePoint}>
                         <p>you scored</p>
