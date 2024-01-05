@@ -3,6 +3,7 @@ import React, { useEffect, useRef } from 'react'
 import style from "./style.module.css"
 import { gsap } from 'gsap';
 import { useSearchParams } from 'next/navigation';
+import BgImage from '@/component/BgImage';
 
 export default function Scorecard() {
     let logoRef = useRef<any>()
@@ -13,6 +14,7 @@ export default function Scorecard() {
     const time = searchParams.get('time')
     return (
         <main className='flex flex-col items-center justify-center h-[100vh]'>
+            <BgImage/>
             <p className={style.textT}>To Treat anemia <br /> without side effects</p>
             <div className={style.Tcontainer}>
                 <img className={style.img1} src="/logo.png" alt="logo" />
