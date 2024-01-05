@@ -2,19 +2,19 @@
 import React, { useEffect, useRef } from 'react'
 import style from "./style.module.css"
 import { gsap } from 'gsap';
-import { useSearchParams } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 import BgImage from '@/component/BgImage';
 
 export default function Scorecard() {
-    let logoRef = useRef<any>()
-    let syrupRef = useRef<any>()
+
+    const router = useRouter()
     const searchParams = useSearchParams()
     const mode = searchParams.get('mode')
     const score = searchParams.get('score')
     const time = searchParams.get('time')
     return (
         <main className='flex flex-col items-center justify-center h-[100vh]'>
-            <BgImage/>
+            <BgImage />
             <p className={style.textT}>To Treat anemia <br /> without side effects</p>
             <div className={style.Tcontainer}>
                 <img className={style.img1} src="/logo.png" alt="logo" />
@@ -28,7 +28,17 @@ export default function Scorecard() {
                         src="/virus/shootIcon.png"
                         alt="shoot"
                     />
-                    <button className={`${style.retry} px-5`}>home</button>
+                    <div className={style.btns}>
+                        <button className={style.retry} onClick={() => {
+                            router.push("/");
+                        }}
+                        >Home</button>
+                        {/* <button className={style.retry} onClick={() => {
+                            router.back();
+                        }}
+                        >Retry</button> */}
+                        {/* <button className={`${style.retry} px-5`}>home</button> */}
+                    </div>
                 </div>
             </section>
         </main>
