@@ -83,7 +83,7 @@ const MovingDiv = forwardRef(
           }`}
       >
         <div className=' relative flex items-center justify-center'>
-          <p className='text-white absolute text-2xl'>
+          <p className='text-white absolute text-2xl font-bold'>
             {text}
           </p>
           <img className='' src={imgSrc} alt={alt} />
@@ -101,7 +101,7 @@ export const Posarr = [
     imgSrc: "/virus/1.png",
     initX: 50,
     inity: 50,
-    duration: 3,
+    duration: 4,
     x1: 10,
     y1: 90,
     x2: 50,
@@ -118,7 +118,7 @@ export const Posarr = [
     imgSrc: "/virus/2.png",
     initX: 20,
     inity: 50,
-    duration: 2,
+    duration: 3,
     x1: 100,
     y1: 10,
     x2: 50,
@@ -135,7 +135,7 @@ export const Posarr = [
     imgSrc: "/virus/3.png",
     initX: 90,
     inity: 80,
-    duration: 2,
+    duration: 3,
     x1: 10,
     y1: 10,
     x2: 150,
@@ -150,7 +150,7 @@ export const Posarr = [
   {
     alt: "palpitation",
     imgSrc: "/virus/4.png",
-    duration: 3,
+    duration: 4,
     x1: 20,
     y1: 10,
     x2: 60,
@@ -165,17 +165,17 @@ export const Posarr = [
   {
     alt: "headache",
     imgSrc: "/virus/5.png",
-    duration: 3,
-    x1: 50,
+    duration: 4,
+    x1: 0,
     y1: 10,
-    x2: 60,
-    y2: 80,
+    x2: 20,
+    y2: 20,
     x3: 50,
     y3: 50,
     x4: 60,
-    y4: 10,
+    y4: 70,
     isBrust: false,
-    score: 200,
+    score: 400,
   },
   // {
   //   alt:"LULIBET",

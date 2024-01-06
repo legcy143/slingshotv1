@@ -41,10 +41,10 @@ export default function GameScreen() {
         setspeed(0)
         break;
       case 'medium':
-        setspeed(0.5)
+        setspeed(1.5)
         break;
       case 'fast':
-        setspeed(1.5)
+        setspeed(2.5)
         break;
 
       default:
